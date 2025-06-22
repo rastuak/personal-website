@@ -4,12 +4,12 @@ import { Award } from 'lucide-react'
 
 export default function SkillsSection() {
   const skills = {
-    "Programming Languages": ["Python", "JavaScript", "TypeScript", "C++", "MATLAB"],
+    "Programming Languages": ["Python", "JavaScript", "TypeScript", "C++"],
     "Web Technologies": ["React.js", "Next.js", "Node.js", "HTML/CSS", "Tailwind CSS"],
     "Databases & Cloud": ["Supabase", "MongoDB", "Firebase"],
     // "Mobile Development": ["React Native", "Flutter"],
     "Hardware & IoT": ["ESP32", "Arduino", "Digital Logic Design", "PCB Design"],
-    "Tools & Platforms": ["Git", "VS Code", "Figma", "Adobe Creative Suite"],
+    // "Tools & Platforms": ["Git", "VS Code", "Figma", "Adobe Creative Suite"],
     "Soft Skills": ["Leadership", "Team Management", "Problem Solving", "Communication"]
   }
 
