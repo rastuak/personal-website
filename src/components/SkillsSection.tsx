@@ -7,7 +7,7 @@ export default function SkillsSection() {
     "Programming Languages": ["Python", "JavaScript", "TypeScript", "C++", "MATLAB"],
     "Web Technologies": ["React.js", "Next.js", "Node.js", "HTML/CSS", "Tailwind CSS"],
     "Databases & Cloud": ["Supabase", "MongoDB", "Firebase"],
-    "Mobile Development": ["React Native", "Flutter"],
+    // "Mobile Development": ["React Native", "Flutter"],
     "Hardware & IoT": ["ESP32", "Arduino", "Digital Logic Design", "PCB Design"],
     "Tools & Platforms": ["Git", "VS Code", "Figma", "Adobe Creative Suite"],
     "Soft Skills": ["Leadership", "Team Management", "Problem Solving", "Communication"]
