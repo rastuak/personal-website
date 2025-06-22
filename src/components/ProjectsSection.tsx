@@ -13,43 +13,65 @@ export default function ProjectsSection({ onProjectSelect }: ProjectsSectionProp
       title: "EXERTION 2025 - Official Competition Website",
       role: "Tech Lead",
       duration: "May 2025 - Present",
-      description: "A full-scale competition organized by EXERCISE FTUI 2025 platform.",
+      description:
+        "A full-scale competition organized by EXERCISE FTUI 2025 platform.",
       technologies: ["React.js", "Supabase", "Next.js", "Tailwind CSS"],
       achievements: [
         "Built the gamification with Next.js and Supabase, focusing on performance, scalability, and accessibility",
         "Develop and implement a gamification system to list UI/UX and Business Innovation tracks with deadline and life validation",
         "Design and online collaboration tools in building workspace, submission and validation systems, advanced detection, and randomized questions",
         "Integrate authentication, role-based access control, and real-time database features using Supabase",
-        "Collaborate with competition committee to gather requirements and iterate on features based on user feedback"
+        "Collaborate with competition committee to gather requirements and iterate on features based on user feedback",
       ],
-      category: "Web Development"
-    },
-    {
-      title: "TIS x EXERCISE FTUI 2025 - Collaborative Website Project",
-      role: "Developer",
-      duration: "May 2025 - Jun 2025",
-      description: "Developing a collaborative website as part of an official partnership between TIS FTUI 2025 and EXERCISE FTUI 2025.",
-      technologies: ["Next.js", "Tailwind CSS"],
-      achievements: [
-        "Build responsive and user-friendly interfaces using Next.JS and Tailwind CSS",
-        "Implement content management tools to enable non-technical users to update the website",
-        "Ensure the website is accessible, cross-browser compatible, and optimized for performance",
-        "Participate in weekly meetings to align technical approaches with collaborative goals and timelines"
-      ],
-      category: "Web Development"
+      category: "Web Development",
     },
     {
       title: "IoT-Based Smart Water Dispenser with Real-Time Monitoring",
       role: "Developer",
       duration: "Jun 2025",
-      description: "Developed an automated water dispenser system using ESP32 microcontroller and ultrasonic sensors.",
+      description:
+        "Developed an automated water dispenser system using ESP32 microcontroller and ultrasonic sensors.",
       technologies: ["ESP32", "IoT", "Sensors", "Real-time Monitoring"],
       achievements: [
         "Provided a hands-free, efficient water dispensing solution",
         "Enabled transparent, remote monitoring of water availability",
-        "Created a comprehensive solution that offers real-time protective monitoring"
+        "Created a comprehensive solution that offers real-time protective monitoring",
       ],
-      category: "IoT Development"
+      category: "IoT Development",
+    },
+    {
+      title: "TIS x EXERCISE FTUI 2025 - Collaborative Website Project",
+      role: "Developer",
+      duration: "May 2025 - Jun 2025",
+      description:
+        "Developing a collaborative website as part of an official partnership between TIS FTUI 2025 and EXERCISE FTUI 2025.",
+      technologies: ["Next.js", "Tailwind CSS"],
+      achievements: [
+        "Build responsive and user-friendly interfaces using Next.JS and Tailwind CSS",
+        "Implement content management tools to enable non-technical users to update the website",
+        "Ensure the website is accessible, cross-browser compatible, and optimized for performance",
+        "Participate in weekly meetings to align technical approaches with collaborative goals and timelines",
+      ],
+      category: "Web Development",
+    },
+    {
+      title: "Open Recruitment Website — EXERCISE FTUI 2025",
+      role: "Frontend Developer",
+      duration: "Jan 2025",
+      description:
+        "Developed the frontend of a web-based open recruitment platform for EXERCISE FTUI to streamline applicant registration and task submission. The platform allows applicants to fill in personal information and upload assignment files directly, with seamless integration to Google Drive via API for centralized storage.",
+      technologies: [
+        "Next.js",
+        "Tailwind CSS",
+        "Supabase",
+        "Framer Motion",
+        "Google Drive API",
+      ],
+      achievements: [
+        "Built responsive and accessible UI using Next.js and Tailwind CSS, enhanced with Framer Motion for smooth animations.",
+        "Ensured mobile-friendly experience and clear user flow for 67 applicants.",
+      ],
+      category: "Web Development",
     },
     // {
     //   title: "Bluetooth Positioning Ocule Interactive x EXERCISE FTUI",
@@ -82,7 +104,8 @@ export default function ProjectsSection({ onProjectSelect }: ProjectsSectionProp
       title: "Shalat Reminder Device",
       role: "Team Leader",
       duration: "May 2024 - Jun 2024",
-      description: "A hardware buzzer reminder system developed using digital logic components.",
+      description:
+        "A hardware buzzer reminder system developed using digital logic components.",
       technologies: ["Digital Logic", "IC Counters", "Decoders", "Hardware"],
       achievements: [
         "Designed and implemented a fully digital circuit to function as a real-time sholat reminder system using logic ICs (counters, decoders,logic gates, etc.).",
@@ -91,9 +114,9 @@ export default function ProjectsSection({ onProjectSelect }: ProjectsSectionProp
         "Focused on reliability and simplicity by eliminating software dependency and using purely time-based hardware logic.",
         "Gained hands-on experience in circuit timing, logic sequencing, and practical application of combinational and sequential logic systems.",
       ],
-      category: "Hardware Design"
-    }
-  ]
+      category: "Hardware Design",
+    },
+  ];
 
   const categoryColors = {
     "Web Development": "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300",
