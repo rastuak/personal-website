@@ -13,7 +13,7 @@ export default function ProjectsSection({ onProjectSelect }: ProjectsSectionProp
       title: "EXERTION 2025 - Official Competition Website",
       role: "Tech Lead",
       duration: "May 2025 - Present",
-      description: "A full-scale competition organized by EXERCISE FTUI 2025 platform facilitating multiple sub-events including UI/UX Design, Research Innovation, and Ecommerce.",
+      description: "A full-scale competition organized by EXERCISE FTUI 2025 platform.",
       technologies: ["React.js", "Supabase", "Next.js", "Tailwind CSS"],
       achievements: [
         "Built the gamification with Next.js and Supabase, focusing on performance, scalability, and accessibility",
