@@ -14,6 +14,7 @@ export default function SkillsSection() {
   }
 
   const achievements = [
+    "OIM FTUI 2025, 1st Place PKM-KC",
     "Kontes Robot Terbang Indonesia (KRTI) Finalist (2024) - Fixed Wing Division",
     "Technoskill 1.0 (2024), 2nd Place Fullstack Web Development, IME FTUI 2024",
     "More to go..."
