@@ -7,7 +7,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-600 via-primary-700 to-blue-800 dark:from-primary-800 dark:via-primary-900 dark:to-blue-900 text-white relative overflow-hidden"
+      className="min-h-screen pt-14 md:pt-4 flex items-center justify-center bg-gradient-to-br from-primary-600 via-primary-700 to-blue-800 dark:from-primary-800 dark:via-primary-900 dark:to-blue-900 text-white relative overflow-hidden"
     >
       <div className="absolute inset-0 bg-black/20 dark:bg-black/40"></div>
 
