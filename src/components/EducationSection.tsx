@@ -15,18 +15,18 @@ export default function EducationSection() {
     {
       institution: "Universitas Indonesia",
       location: "Depok, West Java",
-      degree: "Bachelor of Electrical Engineering",
+      degree: "Electrical Engineering",
       duration: "Aug 2023 - Present",
-      details: []
+      details: [],
     },
     {
       institution: "SMAN 13 GARUT",
       location: "Garut, West Java",
       degree: "High/Secondary Mathematics and Natural Science",
       duration: "Aug 2020 - Jun 2023",
-      details: ["Best graduate of SMAN 13 Garut"]
-    }
-  ]
+      details: ["Best graduate of SMAN 13 Garut"],
+    },
+  ];
 
   return (
     <section id="education" className="section-padding bg-gray-50 dark:bg-gray-800">
