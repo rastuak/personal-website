@@ -54,7 +54,7 @@ export default function ContactSection() {
           >
             <Phone className="w-8 h-8 text-primary-400" />
             <span className="font-semibold">Phone</span>
-            <span className="text-sm text-gray-300">+62 822 1637 8467</span>
+            <span className="text-sm text-gray-300">+62 88 123 223 57</span>
           </div>
         </div>
 
