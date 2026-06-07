@@ -3,62 +3,185 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-ink: #0E0D0B;
+    --color-paper: #F5F2EB;
+    --color-copper: #C25E1F;
+  }
+
   html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-  
+
   body {
-    @apply transition-colors duration-300;
+    @apply bg-paper-100 text-paper-900 font-sans transition-colors duration-300;
+  }
+
+  ::selection {
+    @apply bg-copper-500/20 text-paper-900;
+  }
+
+  /* Default focus ring */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-copper-500 ring-offset-2 ring-offset-paper-100;
   }
 }
 
 @layer components {
-  .glass-effect {
-    @apply bg-white/10 backdrop-blur-lg border border-white/20;
+  /* Display headings — editorial serif */
+  .heading-display {
+    @apply font-serif text-paper-900;
+    font-feature-settings: "ss01", "ss02";
   }
-  
-  .dark .glass-effect {
-    @apply bg-gray-900/10 backdrop-blur-lg border border-gray-700/20;
+
+  /* Eyebrow label above section titles */
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.2em] text-copper-600;
   }
-  
-  .section-padding {
-    @apply py-20 px-6;
+
+  /* Mono label for technical data (dates, project IDs, etc.) */
+  .meta {
+    @apply font-mono text-sm text-paper-600;
   }
-  
-  .container-max {
-    @apply max-w-6xl mx-auto;
+
+  /* Subtle paper texture overlay — handcrafted feel */
+  .paper-texture {
+    background-image:
+      radial-gradient(circle at 25% 30%, rgba(194, 94, 31, 0.02) 0%, transparent 50%),
+      radial-gradient(circle at 75% 70%, rgba(27, 78, 255, 0.015) 0%, transparent 50%);
   }
-  
-  .gradient-text {
-    @apply bg-gradient-to-r from-primary-600 to-blue-600 bg-clip-text text-transparent;
+
+  /* Section title with index number */
+  .section-title {
+    @apply font-serif text-4xl md:text-5xl text-paper-900 leading-[1.05];
   }
-  
-  .card-hover {
-    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+
+  /* Body prose */
+  .prose-body {
+    @apply text-paper-700 leading-relaxed text-lg;
   }
-  
+
+  /* "Notebook rule" — thin separator line with monogram */
+  .notebook-rule {
+    @apply flex items-center gap-4 my-12;
+  }
+  .notebook-rule::before,
+  .notebook-rule::after {
+    content: '';
+    @apply flex-1 h-px bg-paper-300;
+  }
+
+  /* Primary button — solid, no glow */
   .btn-primary {
-    @apply bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2;
+    @apply inline-flex items-center gap-2 bg-paper-900 text-paper-50 px-6 py-3 font-mono text-sm uppercase tracking-wider hover:bg-copper-600 transition-colors duration-200;
   }
-  
+
   .btn-secondary {
-    @apply bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2;
+    @apply inline-flex items-center gap-2 border border-paper-900 text-paper-900 px-6 py-3 font-mono text-sm uppercase tracking-wider hover:bg-paper-900 hover:text-paper-50 transition-colors duration-200;
+  }
+
+  /* Ghost link — underlined text link with copper hover */
+  .link-underline {
+    @apply relative inline-block text-paper-900;
+    background-image: linear-gradient(copper, copper);
+    background-size: 100% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: color 0.2s;
+  }
+  .link-underline:hover {
+    @apply text-copper-600;
+  }
+
+  /* Asymmetric grid container */
+  .grid-asymmetric {
+    @apply grid gap-8 md:gap-12;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 768px) {
+    .grid-asymmetric {
+      grid-template-columns: 5fr 7fr;
+    }
+    .grid-asymmetric-reverse {
+      grid-template-columns: 7fr 5fr;
+    }
+  }
+
+  /* Status dot indicator */
+  .status-dot {
+    @apply inline-block w-2 h-2 rounded-full bg-moss;
+    box-shadow: 0 0 0 3px rgba(63, 107, 58, 0.15);
+  }
+  .status-dot-busy {
+    @apply bg-rust;
+    box-shadow: 0 0 0 3px rgba(161, 61, 42, 0.15);
   }
 }
 
-/* Custom scrollbar */
+/* Custom selection: high contrast */
+::selection {
+  background: #C25E1F;
+  color: #F5F2EB;
+}
+
+/* Custom scrollbar — minimal, paper-like */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
+  height: 10px;
 }
-
 ::-webkit-scrollbar-track {
-  @apply bg-gray-100 dark:bg-gray-800;
+  background: #F5F2EB;
 }
-
 ::-webkit-scrollbar-thumb {
-  @apply bg-gray-400 dark:bg-gray-600 rounded-full;
+  background: #A8A39A;
+  border: 2px solid #F5F2EB;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5A564E;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-gray-500 dark:bg-gray-500;
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Dark mode */
+.dark body {
+  @apply bg-paper-900 text-paper-100;
+}
+
+.dark ::selection {
+  background: #C25E1F;
+  color: #0E0D0B;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #0E0D0B;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #3A3833;
+  border: 2px solid #0E0D0B;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #5A564E;
+}
+
+.dark .heading-display,
+.dark .section-title,
+.dark .meta {
+  @apply text-paper-100;
+}
+
+.dark .prose-body {
+  @apply text-paper-300;
 }

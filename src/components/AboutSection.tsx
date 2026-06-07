@@ -1,105 +1,101 @@
-'use client'
-
-import { MapPin, GraduationCap, Calendar, Code, Cpu, Smartphone, Zap } from 'lucide-react'
+import Image from 'next/image'
 
 export default function AboutSection() {
-  const highlights = [
-    {
-      icon: Code,
-      title: 'Full-Stack Development',
-      description: 'React, Next.js, Node.js, Supabase',
-      color: 'blue'
-    },
-    {
-      icon: Cpu,
-      title: 'IoT & Hardware',
-      description: 'ESP32, Arduino, Circuit Design',
-      color: 'green'
-    },
-    // {
-    //   icon: Smartphone,
-    //   title: 'Mobile Development',
-    //   description: 'React Native, Flutter',
-    //   color: 'purple'
-    // },
-    {
-      icon: Zap,
-      title: 'Robotics & UAV',
-      description: 'Autonomous Systems, Control',
-      color: 'orange'
-    }
-  ]
-
-  const colorClasses = {
-    blue: 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400',
-    green: 'bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400',
-    purple: 'bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400',
-    orange: 'bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400'
-  }
-
   return (
-    <section id="about" className="section-padding bg-white dark:bg-gray-900">
-      <div className="container-max">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            About Me
-          </h2>
-          <div className="w-24 h-1 bg-primary-600 mx-auto"></div>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="animate-slide-up text-justify">
-            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-              Electrical Engineering student at the University of Indonesia with
-              a deep passion for technology, especially in electronics, renewable energy,
-              fullstack development, IoT, and robotics. Enjoys turning ideas into
-              real-world systems—whether it’s through circuit design, coding
-              fullstack apps, or building automation apps.
-            </p>
-            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
-              Always looking for new challenges to grow and make meaningful
-              contributions to innovative technology solutions.
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
-                <MapPin className="w-5 h-5 text-primary-600" />
-                <span>Depok, West Java</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
-                <GraduationCap className="w-5 h-5 text-primary-600" />
-                <span>Universitas Indonesia</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
-                <Calendar className="w-5 h-5 text-primary-600" />
-                <span>Available for opportunities</span>
+    <section id="about" className="py-24 md:py-32 paper-texture">
+      <div className="max-w-wide mx-auto px-6 md:px-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
+          {/* Left — photo + context */}
+          <div className="md:col-span-5">
+            <div className="sticky top-24">
+              <div className="relative aspect-square max-w-sm">
+                <div className="absolute -bottom-3 -left-3 w-full h-full border border-paper-400 dark:border-paper-600" aria-hidden="true" />
+                <div className="relative w-full h-full overflow-hidden bg-paper-200 dark:bg-paper-800">
+                  <Image
+                    src="/photos/profile.jpg"
+                    alt="Kautsar working in the IC Design Lab"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 40vw"
+                  />
+                </div>
+                <div className="mt-3 font-mono text-xs text-paper-600 dark:text-paper-400 flex justify-between">
+                  <span>FIG. 02 / AT WORK</span>
+                  <span>IC DESIGN LAB · 2026</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div
-            className="grid grid-cols-2 gap-6 animate-slide-up"
-            style={{ animationDelay: "0.2s" }}
-          >
-            {highlights.map((item, index) => (
-              <div
-                key={index}
-                className={`${
-                  colorClasses[item.color as keyof typeof colorClasses]
-                } p-6 rounded-lg card-hover`}
-              >
-                <item.icon className="w-8 h-8 mb-3" />
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">
-                  {item.description}
+          {/* Right — content */}
+          <div className="md:col-span-7 space-y-10">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-[0.2em] text-copper-600 mb-3">About</p>
+              <h2 className="font-serif italic text-4xl md:text-5xl text-paper-900 dark:text-paper-100 leading-tight">
+                The engineer who builds at the bottom and top of the stack.
+              </h2>
+            </div>
+
+            <div className="space-y-4 text-paper-700 dark:text-paper-300 leading-relaxed text-lg max-w-reading">
+              <p>
+                I am an Electrical Engineering student at Universitas Indonesia
+                who found that I cannot stay in one layer of abstraction.
+                Transistor-level characterization, full-stack shipping, autonomous
+                drone firmware — they all scratch the same itch for me: figure
+                out how something works, then make it do what I want.
+              </p>
+              <p>
+                Right now I am generating KLayout cells at the IC Design Lab for
+                an upcoming IHP 130nm tape-out. At the same time I am tech-leading
+                full-stack products at EXERCISE FTUI and running the programming
+                division of AUAV UI&apos;s Fixed Wing drone team.
+              </p>
+              <p>
+                What connects these contexts is the same discipline: measure first,
+                build second, validate third. The stack changes but the loop does
+                not.
+              </p>
+            </div>
+
+            {/* Proof points — NOT a 4-card grid */}
+            <div className="space-y-6 border-l-2 border-paper-300 dark:border-paper-700 pl-6">
+              <div>
+                <p className="font-mono text-xs uppercase tracking-wider text-copper-600 dark:text-copper-400 mb-1">
+                  Scale
+                </p>
+                <p className="font-serif text-xl text-paper-900 dark:text-paper-100">
+                  Designed a voting system that handled 2,900+ users with 90% turnout —
+                  the highest in FTUI Pemira history.
                 </p>
               </div>
-            ))}
+              <div>
+                <p className="font-mono text-xs uppercase tracking-wider text-copper-600 dark:text-copper-400 mb-1">
+                  Depth
+                </p>
+                <p className="font-serif text-xl text-paper-900 dark:text-paper-100">
+                  Characterized NMOS/PMOS amplifiers at 130nm. DRC-clean layout on first
+                  pass for an IHP 130nm tape-out cell.
+                </p>
+              </div>
+              <div>
+                <p className="font-mono text-xs uppercase tracking-wider text-copper-600 dark:text-copper-400 mb-1">
+                  Breadth
+                </p>
+                <p className="font-serif text-xl text-paper-900 dark:text-paper-100">
+                  National-level competition finalist in both software (Technoskill)
+                  and hardware (KRTI Autonomous Drones).
+                </p>
+              </div>
+            </div>
+
+            <div className="font-mono text-sm text-paper-600 dark:text-paper-400 mt-8">
+              <span className="uppercase tracking-wider">Seeking:</span>{' '}
+              IC design, semiconductor, and full-stack engineering internships —
+              Summer 2026, Jakarta or remote.
+            </div>
           </div>
         </div>
       </div>
     </section>
-  );
+  )
 }

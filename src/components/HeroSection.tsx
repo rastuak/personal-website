@@ -1,93 +1,113 @@
-'use client'
-
-import { ChevronDown, Mail, Linkedin, Phone, Github } from "lucide-react";
-import ProfilePicture from './ProfilePicture';
+import { FileText, Mail, ArrowDown } from 'lucide-react'
+import Image from 'next/image'
 
 export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="min-h-screen pt-14 md:pt-4 flex items-center justify-center bg-gradient-to-br from-primary-600 via-primary-700 to-blue-800 dark:from-primary-800 dark:via-primary-900 dark:to-blue-900 text-white relative overflow-hidden"
+      className="relative min-h-screen pt-24 pb-16 overflow-hidden paper-texture"
     >
-      <div className="absolute inset-0 bg-black/20 dark:bg-black/40"></div>
+      <div className="max-w-wide mx-auto px-6 md:px-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center min-h-[calc(100vh-12rem)]">
+          {/* Left column — text */}
+          <div className="md:col-span-7 space-y-8">
+            <div className="flex items-center gap-3">
+              <span className="status-dot" aria-hidden="true" />
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-paper-700 dark:text-paper-300">
+                Open to internships · Summer 2026
+              </span>
+            </div>
 
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/5 rounded-full animate-float"></div>
-        <div
-          className="absolute -bottom-40 -left-40 w-96 h-96 bg-white/5 rounded-full animate-float"
-          style={{ animationDelay: "2s" }}
-        ></div>
-        <div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/3 rounded-full animate-float"
-          style={{ animationDelay: "4s" }}
-        ></div>
-      </div>
+            <div>
+              <p className="font-mono text-xs uppercase tracking-[0.2em] text-copper-600 dark:text-copper-400 mb-3">
+                Electrical Engineering · Universitas Indonesia
+              </p>
+              <h1 className="heading-display text-display-1 italic">
+                Kautsar<br />Faradika&nbsp;Faisal.
+              </h1>
+            </div>
 
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-6 animate-fade-in">
-        <div className="mb-8">
-          <ProfilePicture />
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 animate-slide-up">
-            Kautsar Faradika Faisal
-          </h1>
-          <p
-            className="text-xl md:text-2xl text-blue-100 mb-2 animate-slide-up"
-            style={{ animationDelay: "0.2s" }}
-          >
-            Electrical Engineering Student
-          </p>
-          <p
-            className="text-lg text-blue-200 mb-8 animate-slide-up"
-            style={{ animationDelay: "0.4s" }}
-          >
-            Passionate about electronics, robotics, technologies, and innovative solutions
-          </p>
-        </div>
+            <p className="prose-body max-w-reading text-xl">
+              I design at the transistor level and ship at the application level.
+              Currently characterizing 130nm analog cells at the IC Design Lab and
+              shipping full-stack products on the side.
+            </p>
 
-        <div
-          className="flex flex-wrap justify-center gap-4 mb-12 animate-slide-up"
-          style={{ animationDelay: "0.6s" }}
-        >
-          <a
-            href="mailto:kfaradika@gmail.com"
-            className="glass-effect px-6 py-3 rounded-lg hover:bg-white/20 transition-all duration-300 flex items-center gap-2"
-          >
-            <Mail className="w-5 h-5" />
-            <span>kfaradika@gmail.com</span>
-          </a>
-          <a
-            href="https://linkedin.com/in/kautsarfaisal"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="glass-effect px-6 py-3 rounded-lg hover:bg-white/20 transition-all duration-300 flex items-center gap-2"
-          >
-            <Linkedin className="w-5 h-5" />
-            <span>LinkedIn</span>
-          </a>
-          <a
-            href="https://github.com/rastuak"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="glass-effect px-6 py-3 rounded-lg hover:bg-white/20 transition-all duration-300 flex items-center gap-2"
-          >
-            <Github className="w-5 h-5" />
-            <span>GitHub</span>
-          </a>
-          <div className="glass-effect px-6 py-3 rounded-lg flex items-center gap-2">
-            <Phone className="w-5 h-5" />
-            <span>+62 88 123 223 57</span>
+            <div className="flex flex-wrap items-center gap-3 pt-2">
+              <a href="#work" className="btn-primary">
+                View selected work
+                <ArrowDown className="w-4 h-4" />
+              </a>
+              <a href="#contact" className="btn-secondary">
+                Get in touch
+                <Mail className="w-4 h-4" />
+              </a>
+              <a
+                href="/resume.pdf"
+                className="link-underline font-mono text-sm uppercase tracking-wider"
+                aria-label="Download resume (PDF)"
+              >
+                <FileText className="inline w-4 h-4 mr-2 -mt-0.5" />
+                Resume.pdf
+              </a>
+            </div>
+
+            {/* Quick stats — quantified proof */}
+            <dl className="grid grid-cols-3 gap-6 pt-8 border-t border-paper-300 dark:border-paper-800 max-w-xl">
+              <div>
+                <dt className="font-mono text-xs uppercase tracking-wider text-paper-600 dark:text-paper-400">
+                  Users served
+                </dt>
+                <dd className="font-serif text-3xl text-paper-900 dark:text-paper-100 mt-1">
+                  2,900<span className="text-copper-600 dark:text-copper-400">+</span>
+                </dd>
+              </div>
+              <div>
+                <dt className="font-mono text-xs uppercase tracking-wider text-paper-600 dark:text-paper-400">
+                  Projects
+                </dt>
+                <dd className="font-serif text-3xl text-paper-900 dark:text-paper-100 mt-1">
+                  06
+                </dd>
+              </div>
+              <div>
+                <dt className="font-mono text-xs uppercase tracking-wider text-paper-600 dark:text-paper-400">
+                  Awards
+                </dt>
+                <dd className="font-serif text-3xl text-paper-900 dark:text-paper-100 mt-1">
+                  05
+                </dd>
+              </div>
+            </dl>
+          </div>
+
+          {/* Right column — photo */}
+          <div className="md:col-span-5 relative">
+            <div className="relative aspect-[4/5] max-w-md mx-auto">
+              {/* Copper frame accent */}
+              <div className="absolute -top-3 -right-3 w-full h-full border border-copper-600 dark:border-copper-400" aria-hidden="true" />
+              <div className="relative w-full h-full overflow-hidden bg-paper-200 dark:bg-paper-800">
+                <Image
+                  src="/photos/profile.jpg"
+                  alt="Portrait of Kautsar Faradika Faisal"
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                />
+              </div>
+              {/* Caption */}
+              <div className="mt-3 flex items-baseline justify-between font-mono text-xs text-paper-600 dark:text-paper-400">
+                <span>FIG. 01 / PORTRAIT</span>
+                <span>DEPOK, ID · 2026</span>
+              </div>
+            </div>
           </div>
         </div>
-
-        <a
-          href="#about"
-          className="inline-flex items-center gap-2 bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-300 animate-slide-up"
-          style={{ animationDelay: "0.8s" }}
-        >
-          <span>Explore My Work</span>
-          <ChevronDown className="w-5 h-5" />
-        </a>
       </div>
+
+      {/* Scroll hint */}
+
     </section>
-  );
+  )
 }
