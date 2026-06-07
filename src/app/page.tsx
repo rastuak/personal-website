@@ -26,7 +26,7 @@ export default function Home() {
           }
         }
       },
-      { rootMargin: '-40% 0px -55% 0px' }
+      { rootMargin: '0px 0px -75% 0px' }
     )
 
     for (const id of sections) {
