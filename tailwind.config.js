@@ -62,7 +62,7 @@ module.exports = {
         mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
       },
       fontSize: {
-        'display-1': ['clamp(3.5rem, 8vw, 6rem)', { lineHeight: '0.95', letterSpacing: '-0.02em' }],
+        'display-1': ['clamp(2.25rem, 7vw, 6rem)', { lineHeight: '0.95', letterSpacing: '-0.02em' }],
         'display-2': ['clamp(2.5rem, 5vw, 4rem)', { lineHeight: '1.0', letterSpacing: '-0.015em' }],
         'eyebrow': ['0.75rem', { lineHeight: '1.0', letterSpacing: '0.2em' }],
       },

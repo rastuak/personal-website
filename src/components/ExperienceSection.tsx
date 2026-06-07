@@ -19,14 +19,14 @@ export default function ExperienceSection() {
         </div>
 
         <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-0 md:left-6 top-0 bottom-0 w-px bg-paper-300 dark:bg-paper-700" aria-hidden="true" />
+          {/* Vertical line — flush left on mobile, offset on desktop */}
+          <div className="absolute left-[7px] md:left-6 top-0 bottom-0 w-px bg-paper-300 dark:bg-paper-700" aria-hidden="true" />
 
           <div className="space-y-12 ml-0 md:ml-16">
             {sorted.map((exp) => (
-              <article key={exp.id} className="relative pl-8 md:pl-0">
+              <article key={exp.id} className="relative pl-10 md:pl-0">
                 {/* Timeline dot */}
-                <div className="absolute left-[-2.25rem] md:left-[-4.125rem] top-1.5 w-4 h-4 rounded-full bg-paper-50 dark:bg-paper-900 border-2 border-paper-400 dark:border-paper-600 z-10" aria-hidden="true" />
+                <div className="absolute left-[3px] md:left-[-4.125rem] top-1.5 w-4 h-4 rounded-full bg-paper-50 dark:bg-paper-900 border-2 border-paper-400 dark:border-paper-600 z-10" aria-hidden="true" />
 
                 <div className="grid md:grid-cols-12 gap-4 md:gap-8">
                   {/* Left — date + type */}

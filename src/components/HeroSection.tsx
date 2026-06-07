@@ -23,7 +23,7 @@ export default function HeroSection() {
                 Electrical Engineering · Universitas Indonesia
               </p>
               <h1 className="heading-display text-display-1 italic">
-                Kautsar<br />Faradika&nbsp;Faisal.
+                Kautsar<br />Faradika Faisal.
               </h1>
             </div>
 
@@ -53,28 +53,28 @@ export default function HeroSection() {
             </div>
 
             {/* Quick stats — quantified proof */}
-            <dl className="grid grid-cols-3 gap-6 pt-8 border-t border-paper-300 dark:border-paper-800 max-w-xl">
-              <div>
-                <dt className="font-mono text-xs uppercase tracking-wider text-paper-600 dark:text-paper-400">
+            <dl className="grid grid-cols-3 gap-4 sm:gap-6 pt-8 border-t border-paper-300 dark:border-paper-800 max-w-xl">
+              <div className="min-w-0">
+                <dt className="font-mono text-[10px] sm:text-xs uppercase tracking-wider text-paper-600 dark:text-paper-400 truncate">
                   Users served
                 </dt>
-                <dd className="font-serif text-3xl text-paper-900 dark:text-paper-100 mt-1">
+                <dd className="font-serif text-2xl sm:text-3xl text-paper-900 dark:text-paper-100 mt-1">
                   2,900<span className="text-copper-600 dark:text-copper-400">+</span>
                 </dd>
               </div>
-              <div>
-                <dt className="font-mono text-xs uppercase tracking-wider text-paper-600 dark:text-paper-400">
+              <div className="min-w-0">
+                <dt className="font-mono text-[10px] sm:text-xs uppercase tracking-wider text-paper-600 dark:text-paper-400 truncate">
                   Projects
                 </dt>
-                <dd className="font-serif text-3xl text-paper-900 dark:text-paper-100 mt-1">
+                <dd className="font-serif text-2xl sm:text-3xl text-paper-900 dark:text-paper-100 mt-1">
                   06
                 </dd>
               </div>
-              <div>
-                <dt className="font-mono text-xs uppercase tracking-wider text-paper-600 dark:text-paper-400">
+              <div className="min-w-0">
+                <dt className="font-mono text-[10px] sm:text-xs uppercase tracking-wider text-paper-600 dark:text-paper-400 truncate">
                   Awards
                 </dt>
-                <dd className="font-serif text-3xl text-paper-900 dark:text-paper-100 mt-1">
+                <dd className="font-serif text-2xl sm:text-3xl text-paper-900 dark:text-paper-100 mt-1">
                   05
                 </dd>
               </div>

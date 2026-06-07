@@ -76,7 +76,7 @@ export default function ProjectModal({ projectId, onClose }: ProjectModalProps) 
         <button
           id="modal-close-btn"
           onClick={onClose}
-          className="sticky top-0 float-right m-4 p-2 z-10 text-paper-600 dark:text-paper-400 hover:text-paper-900 dark:hover:text-paper-100 transition-colors"
+          className="sticky top-0 float-right m-4 flex items-center justify-center w-11 h-11 z-10 text-paper-600 dark:text-paper-400 hover:text-paper-900 dark:hover:text-paper-100 transition-colors"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />

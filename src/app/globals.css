@@ -79,7 +79,7 @@
   }
 
   .btn-secondary {
-    @apply inline-flex items-center gap-2 border border-paper-900 text-paper-900 px-6 py-3 font-mono text-sm uppercase tracking-wider hover:bg-paper-900 hover:text-paper-50 transition-colors duration-200;
+    @apply inline-flex items-center gap-2 border border-paper-900 dark:border-paper-300 text-paper-900 dark:text-paper-300 px-6 py-3 font-mono text-sm uppercase tracking-wider hover:bg-paper-900 dark:hover:bg-paper-300 hover:text-paper-50 dark:hover:text-paper-900 transition-colors duration-200;
   }
 
   /* Ghost link — underlined text link with copper hover */
