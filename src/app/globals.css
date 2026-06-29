@@ -84,7 +84,7 @@
 
   /* Ghost link — underlined text link with copper hover */
   .link-underline {
-    @apply relative inline-block text-paper-900;
+    @apply relative inline-block text-paper-900 dark:text-paper-300;
     background-image: linear-gradient(copper, copper);
     background-size: 100% 1px;
     background-position: 0 100%;
@@ -92,7 +92,7 @@
     transition: color 0.2s;
   }
   .link-underline:hover {
-    @apply text-copper-600;
+    @apply text-copper-600 dark:text-copper-400;
   }
 
   /* Asymmetric grid container */

@@ -1,19 +1,4 @@
-import { skillGroups } from '@/data/skills'
-
-const levelMeta = {
-  expert: {
-    label: 'Expert',
-    className: 'bg-paper-900 text-paper-50 dark:bg-paper-50 dark:text-paper-900',
-  },
-  proficient: {
-    label: 'Proficient',
-    className: 'bg-paper-200 text-paper-800 dark:bg-paper-800 dark:text-paper-200',
-  },
-  familiar: {
-    label: 'Familiar',
-    className: 'bg-paper-100 text-paper-600 dark:bg-paper-800 dark:text-paper-400',
-  },
-}
+import { skillGroups, softSkills } from '@/data/skills'
 
 export default function SkillsSection() {
   return (
@@ -24,17 +9,12 @@ export default function SkillsSection() {
           <span className="font-serif italic text-4xl md:text-5xl text-paper-900 dark:text-paper-100">Skills</span>
         </div>
 
-        <div className="space-y-8">
+        <div className="grid md:grid-cols-2 gap-x-12 gap-y-8">
           {skillGroups.map((group) => (
-            <div key={group.category} className="border-b border-paper-200 dark:border-paper-800 pb-6 last:border-b-0 last:pb-0">
-              <div className="flex items-center gap-3 mb-3">
-                <h3 className="font-mono text-sm uppercase tracking-wider text-paper-900 dark:text-paper-100">
-                  {group.category}
-                </h3>
-                <span className={cx('font-mono text-[10px] uppercase tracking-wider px-1.5 py-0.5', levelMeta[group.level]?.className)}>
-                  {levelMeta[group.level]?.label}
-                </span>
-              </div>
+            <div key={group.category}>
+              <h3 className="font-mono text-xs uppercase tracking-wider text-paper-900 dark:text-paper-100 mb-3 pb-2 border-b border-paper-200 dark:border-paper-800">
+                {group.category}
+              </h3>
               <div className="flex flex-wrap gap-2">
                 {group.skills.map((skill) => (
                   <span
@@ -48,11 +28,23 @@ export default function SkillsSection() {
             </div>
           ))}
         </div>
+
+        <div className="mt-12 pt-8 border-t border-paper-300 dark:border-paper-700">
+          <h3 className="font-mono text-xs uppercase tracking-wider text-paper-600 dark:text-paper-400 mb-4">
+            Soft Skills
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            {softSkills.map((skill) => (
+              <span
+                key={skill}
+                className="font-mono text-sm text-paper-600 dark:text-paper-400 px-3 py-1 bg-paper-100 dark:bg-paper-800 border border-paper-200 dark:border-paper-700"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   )
-}
-
-function cx(...classes: (string | undefined | false)[]) {
-  return classes.filter(Boolean).join(' ')
 }

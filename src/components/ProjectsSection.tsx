@@ -48,7 +48,7 @@ export default function ProjectsSection({ onProjectSelect }: ProjectsSectionProp
         {/* Featured project — full case study card */}
         {featured && (
           <article
-            className="group relative mb-16 cursor-pointer"
+            className="group relative mb-12 md:mb-16 cursor-pointer"
             onClick={() => onProjectSelect(featured.id)}
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') onProjectSelect(featured.id)
@@ -57,7 +57,7 @@ export default function ProjectsSection({ onProjectSelect }: ProjectsSectionProp
             role="button"
             aria-label={`View case study: ${featured.title}`}
           >
-            <div className="border border-paper-300 dark:border-paper-700 p-6 md:p-10 hover:bg-paper-100 dark:hover:bg-paper-800 transition-colors">
+            <div className="border border-paper-300 dark:border-paper-700 p-5 md:p-10 hover:bg-paper-100 dark:hover:bg-paper-800 transition-colors">
               <div className="flex items-center justify-between mb-2">
                 <span className={cx(categoryMeta[featured.category]?.className, 'font-mono text-xs px-2 py-1')}>
                   {categoryMeta[featured.category]?.label}
@@ -112,11 +112,11 @@ export default function ProjectsSection({ onProjectSelect }: ProjectsSectionProp
         )}
 
         {/* Other projects — compact grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-paper-300 dark:bg-paper-700">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-paper-300 dark:bg-paper-700 border-t border-paper-300 dark:border-paper-700">
           {others.map((project) => (
             <article
               key={project.id}
-              className="group bg-paper-50 dark:bg-paper-900 p-6 cursor-pointer hover:bg-paper-100 dark:hover:bg-paper-800 transition-colors"
+              className="group bg-paper-50 dark:bg-paper-900 p-5 md:p-6 cursor-pointer hover:bg-paper-100 dark:hover:bg-paper-800 transition-colors"
               onClick={() => onProjectSelect(project.id)}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') onProjectSelect(project.id)

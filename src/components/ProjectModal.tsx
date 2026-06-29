@@ -76,13 +76,13 @@ export default function ProjectModal({ projectId, onClose }: ProjectModalProps) 
         <button
           id="modal-close-btn"
           onClick={onClose}
-          className="sticky top-0 float-right m-4 flex items-center justify-center w-11 h-11 z-10 text-paper-600 dark:text-paper-400 hover:text-paper-900 dark:hover:text-paper-100 transition-colors"
+          className="absolute top-4 right-4 z-10 flex items-center justify-center w-11 h-11 text-paper-600 dark:text-paper-400 hover:text-paper-900 dark:hover:text-paper-100 transition-colors"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />
         </button>
 
-        <div className="px-6 pb-8 -mt-2">
+        <div className="px-6 pt-6 pb-8">
           {/* Header */}
           <div className="border-b border-paper-300 dark:border-paper-700 pb-6 mb-8">
             <p className="font-mono text-xs uppercase tracking-widest text-copper-600 dark:text-copper-400 mb-2">

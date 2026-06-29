@@ -10,15 +10,15 @@ export const experiences: Experience[] = [
     end: null,
     location: 'Depok, ID',
     context:
-      'Semiconductor research lab focused on physical design of integrated circuits. Currently preparing for a silicon tape-out on the IHP 130nm technology node.',
+      'Assisting the Head of Laboratory in advanced semiconductor research, focusing on the physical design of integrated circuits for an upcoming silicon tape-out on the IHP 130nm technology node.',
     responsibilities: [
       'Generate physical layouts in KLayout targeting the IHP 130nm Open PDK',
       'Run DRC (Design Rule Check) against foundry rules to ensure fabricability',
       'Route and optimize layout topologies for area efficiency',
-      'Support the Head of Laboratory on tape-out preparation',
+      'Support the Head of Laboratory on tape-out preparation and final submission',
     ],
     outcome:
-      'Two cells completed in layout, one in routing. DRC-clean on first pass for the smaller cell.',
+      'Two cells completed in layout, one in routing. DRC-clean on first pass. Currently in tape-out preparation phase.',
   },
   {
     id: 'electronics-lab-ta',
@@ -67,11 +67,11 @@ export const experiences: Experience[] = [
     end: '2026-01',
     location: 'Depok, ID',
     context:
-      'EXERCISE FTUI is a technology-focused student organization under Electrical Engineering @ UI.',
+      'A technology-focused student organization under the Department of Electrical Engineering, Universitas Indonesia.',
     responsibilities: [
-      'Coordinated software projects across 10+ team members',
-      'Worked with UI/UX, Content, and Hardware divisions on integrated deliverables',
-      'Ran task delegation, progress tracking, and peer reviews',
+      'Led and coordinated multiple software development projects involving 10+ team members',
+      'Collaborated with UI/UX, Content, and Hardware divisions to deliver integrated tech solutions',
+      'Facilitated task delegation, progress tracking, and peer reviews to ensure quality project outcomes',
     ],
     outcome:
       'Shipped EXERTION 2025 platform on time. Three sub-events ran in parallel without incidents.',

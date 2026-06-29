@@ -1,53 +1,48 @@
-import { SkillGroup, Award } from '@/types/content'
+import { SkillGroup } from '@/types/content'
 
 export const skillGroups: SkillGroup[] = [
   {
     category: 'Semiconductor & EDA',
-    level: 'expert',
-    skills: ['Xschem', 'KLayout', 'Ngspice', 'IHP 130nm PDK', 'Skywater 130nm', 'NMOS/PMOS characterization'],
+    skills: ['Xschem', 'KLayout', 'Ngspice', 'IHP 130nm PDK', 'Skywater 130nm', 'gm/ID methodology'],
   },
   {
     category: 'Languages',
-    level: 'expert',
     skills: ['TypeScript', 'JavaScript', 'Python', 'C/C++'],
   },
   {
     category: 'Web Stack',
-    level: 'expert',
     skills: ['Next.js', 'Remix', 'React', 'Node.js', 'Tailwind CSS', 'HTML/CSS', 'Supabase', 'PostgreSQL'],
   },
   {
     category: 'Embedded & IoT',
-    level: 'proficient',
     skills: ['ESP32', 'Arduino', 'MQTT', 'OpenCV', 'Ardupilot', 'PLC'],
   },
   {
     category: 'Analog & Hardware',
-    level: 'proficient',
     skills: ['Digital logic wiring', 'Electrical wiring', 'IC 555 timer', 'Op-amps', 'Zener diodes', 'PCB design'],
   },
   {
-    category: 'Tools',
-    level: 'proficient',
-    skills: ['Figma', 'Canva', 'Microsoft Office', 'Git'],
+    category: 'Tools & Design',
+    skills: ['Figma', 'Canva', 'Microsoft Office', 'Git', 'KLayout'],
   },
   {
     category: 'Familiar',
-    level: 'familiar',
     skills: ['React Native', 'MongoDB', 'Firebase', 'Flutter'],
   },
 ]
 
 export const softSkills = [
-  'Public speaking',
-  'Cross-functional collaboration',
-  'Technical writing',
-  'Project coordination',
-  'Mentoring',
+  'Work Ethic',
+  'Creativity',
+  'Honesty',
   'Adaptability',
+  'Teamwork',
+  'Public speaking',
+  'Leadership',
+  'Critical thinking',
 ]
 
-export const awardsList: Award[] = [
+export const awardsList = [
   {
     title: '1st Place — PKM-KC',
     event: 'Olimpiade Ilmiah Mahasiswa FTUI (OIM FTUI) 2025',

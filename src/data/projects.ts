@@ -34,29 +34,60 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 'common-source-amplifier',
-    title: 'Common-Source Amplifier — 130nm Characterization',
-    role: 'Coursework (Independent)',
-    duration: 'Mar 2026',
+    id: 'fully-differential-ota',
+    title: 'Fully Differential Two-Stage OTA — IHP 130nm',
+    role: 'Microelectronics Project',
+    duration: 'Jun 2026',
     category: 'semiconductor',
     summary:
-      'Designed and characterized a common-source amplifier using open-source EDA tools targeting the Skywater 130nm PDK. Bridged textbook amplifier theory with real transistor-level design.',
+      'Designed a fully differential two-stage operational transconductance amplifier with active common-mode feedback (CMFB) in IHP SG13G2 130nm SiGe BiCMOS, achieving 74.86 dB gain and 9.57 MHz GBW under 2 mW.',
     context:
-      'A self-directed coursework project to understand analog design at the layout level — not just simulation. The goal was to take a design from schematic through to a clean GDS-ready layout.',
+      'The capstone of the Microelectronics course sequence: design an OTA that meets real target specs — not just sim-to-pass, but sim-to-fabricate. The IHP 130nm process added the complexity of real PDK parameters.',
     problem:
-      'How does load choice (resistive vs diode-connected vs current-source) change gain, bandwidth, and headroom? What does it look like in silicon?',
+      'How do you size a two-stage OTA with CMFB to meet gain >74 dB, GBW >5 MHz, symmetric slew rate, and sub-2 mW power — all simultaneously?',
     approach:
-      'Used Xschem for schematic entry, Ngspice for characterization sweeps. Ran DC operating-point analysis on NMOS/PMOS devices to size them for the target gain, then built the amplifier with three load configurations and compared their trade-offs.',
+      'Systematically sized all transistors using hand calculations (square-law, gm/ID methodology) and PDK lookup tables to determine optimal bias points and device dimensions across both stages and the CMFB loop. Used Xschem for schematic capture, IHP SG13G2 PDK for the 130nm process models. Iterative simulation-based fine-tuning closed the gap between hand calcs and silicon behavior.',
     result:
-      'Confirmed textbook behavior in simulation: current-source load gave highest gain, resistive load gave most headroom, diode-connected gave the most compact layout. A working schematic in Xschem + characterization plots in Ngspice.',
-    stack: ['Xschem', 'Ngspice', 'Skywater 130nm PDK', 'NMOS/PMOS characterization'],
+      'All design targets met: gain 74.86 dB (>74), GBW 9.57 MHz (>5), symmetric slew rate 10.43 V/µs, power dissipation 1.92 mW (<2).',
+    stack: ['Xschem', 'IHP SG13G2 130nm PDK', 'gm/ID methodology', 'Ngspice', 'Active CMFB'],
+    metrics: [
+      { label: 'Gain', value: '74.86 dB' },
+      { label: 'GBW', value: '9.57 MHz' },
+      { label: 'Slew rate', value: '10.43 V/µs' },
+      { label: 'Power', value: '1.92 mW' },
+    ],
     highlights: [
-      'Ran DC sweeps across Vov, Vds, and W/L to find the saturation region',
-      'Compared three load configurations on the same transistor size',
-      'All open-source tooling — no paid EDA licenses',
+      'Hand-calculated all transistor sizes using gm/ID methodology before simulation',
+      'Active CMFB loop kept common-mode output stabilized without extra power stage',
+      'IHP 130nm SiGe BiCMOS process — real foundry PDK, not educational models',
     ],
     learnings:
-      'Reading about "current-source load gives more gain" in a textbook is one thing. Sweeping it in Ngspice and watching the gain plot curve up is a different kind of knowing.',
+      'The hand calculations got me within 15% of the final specs. That last 15% was all parasitic capacitances that the square-law model does not capture. The takeaway: hand calcs set the direction, simulation closes the distance.',
+  },
+  {
+    id: '12v-linear-power-supply',
+    title: '12V Linear Power Supply with Discrete Shunt Regulator',
+    role: 'Coursework Project',
+    duration: 'Dec 2025',
+    category: 'hardware',
+    summary:
+      'A stable 12V DC power source built from a 220V AC mains input — full-wave rectification, capacitive smoothing, and a discrete Zener-BJT shunt regulator. No IC regulators, just discrete components.',
+    context:
+      'A class project with a deliberately pure-analog constraint: design a regulated power supply using only discrete components. The brief was "no 78xx, no LM317 — only transistors, diodes, and passives."',
+    problem:
+      'How do you get a clean, load-regulated 12V DC from a 220V AC wall outlet using only discrete components?',
+    approach:
+      'Step-down via CT transformer (220V to 15V AC), full-wave bridge rectifier, capacitive smoothing filter (4700 µF), then a discrete shunt regulator: 12V Zener diode sets the reference, 2N2222 BJT passes the current, and a series resistor drops the excess voltage.',
+    result:
+      'Working 12V DC output, ripple within spec, load regulation adequate for powering op-amp circuits on a breadboard.',
+    stack: ['CT Transformer', 'Full-wave rectifier', '2N2222 BJT', '12V Zener diode', 'Capacitive smoothing'],
+    highlights: [
+      '220V AC mains to stable 12V DC — all discrete, no IC regulator',
+      'Shunt topology dissipates excess as heat, keeps output steady across load variation',
+      'Everything through-hole on perfboard — measured with oscilloscope',
+    ],
+    learnings:
+      'A shunt regulator is simple and reliable but inefficient — the series resistor burns power proportional to the current. That tradeoff is obvious on paper but you feel it when the resistor gets hot.',
   },
   {
     id: 'selamat-sentosa-battery-charger',

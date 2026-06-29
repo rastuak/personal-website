@@ -46,7 +46,7 @@ export interface Education {
 
 export interface SkillGroup {
   category: string
-  level: 'expert' | 'proficient' | 'familiar'
+  level?: 'expert' | 'proficient' | 'familiar'
   skills: string[]
 }
 
